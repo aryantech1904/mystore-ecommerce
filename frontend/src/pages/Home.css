@@ -1,0 +1,128 @@
+.home {
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 80px 40px;
+  text-align: center;
+  background: #e5e7eb;
+}
+
+.hero h1 {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.hero button,
+.product-card button {
+  border: none;
+  padding: 12px 25px;
+  background: #111827;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hero button:hover,
+.product-card button:hover {
+  background: #374151;
+}
+
+.products-section {
+  padding: 50px 40px;
+}
+
+.products-section h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 32px;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  width: 280px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f4f6;
+  border-radius: 8px;
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+
+.product-card p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.shop-now-button {
+  display: inline-block;
+  border: none;
+  padding: 12px 25px;
+  background: #111827;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.shop-now-button:hover {
+  background: #374151;
+}
+
+.home-product-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.home-details-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  background: #e5e7eb;
+  color: #111827;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.home-details-button:hover {
+  background: #d1d5db;
+}
+
+.home-product-buttons button {
+  border: none;
+  padding: 12px 18px;
+  background: #111827;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.home-product-buttons button:hover {
+  background: #374151;
+}
