@@ -1,146 +1,42 @@
-# 🛒 MyStore - Full Stack E-Commerce Website
 
-MyStore is a full-stack e-commerce web application built to provide a simple and user-friendly online shopping experience. Users can browse products, view product details, register/login, add products to the cart, manage quantities, and securely log out.
+# MyStore E-Commerce Store
 
-## 🚀 Features
+A full-stack e-commerce web application built as part of my CodeAlpha project.
 
-* 🏠 Responsive Home Page
-* 🛍️ Products Listing
-* 🔍 Product Search & Filtering
-* 📦 Product Details Page
-* 🛒 Add to Cart
-* ➕➖ Increase/Decrease Cart Quantity
-* 💾 Cart Data stored using LocalStorage
-* 👤 User Registration & Login
-* 🔐 Password Hashing using bcrypt
-* 🔑 JWT-based Authentication
-* 🚪 Secure Logout
-* 📱 Responsive Navigation
-* 🗄️ MongoDB Database Integration
-* ⚡ REST API using Node.js & Express.js
+## Live Demo
 
-## 🛠️ Tech Stack
+Visit the live website: [MyStore E-Commerce Store]https://mystore-ecommerce-two.vercel.app/
 
-### Frontend
+## Features
 
-* React.js
-* JavaScript
-* HTML5
-* CSS3
-* Vite
-* React Router DOM
+- Browse and view products
+- Product details page
+- Shopping cart functionality
+- User registration and login
+- Product search and filtering
+- Responsive user interface
 
-### Backend
+## Tech Stack
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT
-* bcryptjs
+**Frontend:** React, Vite, JavaScript, HTML, CSS
 
-### Tools
+**Backend:** Node.js, Express.js
 
-* VS Code
-* Git
-* GitHub
-* npm
+**Database:** MongoDB Atlas
 
-## 📁 Project Structure
+**Deployment:** Vercel (Frontend), Render (Backend)
 
-```text
-E-Commerce-Store/
-│
-├── backend/
-│   ├── models/
-│   │   ├── Product.js
-│   │   └── User.js
-│   ├── seedProducts.js
-│   ├── server.js
-│   ├── .env
-│   └── package.json
-│
-├── frontend/
-│   ├── public/
-│   │   └── images/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── pages/
-│   │   └── App.jsx
-│   └── package.json
-│
-├── .gitignore
-└── README.md
-```
+**Version Control:** Git and GitHub
 
-## ⚙️ Installation & Setup
+## Run Locally
 
-### 1. Clone the Repository
+1. Clone this repository.
+2. Install frontend and backend dependencies.
+3. Configure the required environment variables.
+4. Start the backend and frontend servers.
 
-```bash
-git clone https://github.com/aryantech1904/mystore-ecommerce.git
-cd mystore-ecommerce
-```
+See the project configuration files for the exact commands and environment variables.
 
-### 2. Install Backend Dependencies
+## Project
 
-```bash
-cd backend
-npm install
-```
-
-Create a `.env` file inside the `backend` folder:
-
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-```
-
-### 3. Start the Backend
-
-```bash
-npm start
-```
-
-### 4. Install Frontend Dependencies
-
-Open a new terminal:
-
-```bash
-cd frontend
-npm install
-```
-
-### 5. Start the Frontend
-
-```bash
-npm run dev
-```
-
-The application will then be available through the local Vite development URL shown in the terminal.
-
-## 🔐 Security
-
-Sensitive environment variables such as MongoDB credentials and JWT secrets are stored in `.env` files and excluded from GitHub using `.gitignore`.
-
-## 📌 Future Improvements
-
-* Online Payment Integration
-* Admin Dashboard
-* Order Management
-* Product Reviews & Ratings
-* Wishlist
-* Order History
-* Deployment with a live backend and frontend
-
-## 👨‍💻 Author
-
-**Aryan Raj Srivastava**
-
-Full Stack Developer
-
-## 📄 License
-
-This project is created for learning, development, and portfolio purposes.
+Developed as a hands-on full-stack development project to practise frontend development, backend APIs, database integration, and deployment.
