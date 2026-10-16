@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCart } from "../context/CartContext";
@@ -10,6 +11,8 @@ function ProductDetails() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  const API_URL = import.meta.env.VITE_API_URL;
 
   // Ratings are currently maintained on the frontend.
   const ratings = {
@@ -28,8 +31,12 @@ function ProductDetails() {
       setProduct(null);
 
       try {
+        if (!API_URL) {
+          throw new Error("Backend URL is not configured.");
+        }
+
         const response = await fetch(
-          `http://localhost:5000/api/products/${id}`
+          `${API_URL.replace(/\/+$/, "")}/api/products/${id}`
         );
 
         if (response.status === 404) {
@@ -52,7 +59,7 @@ function ProductDetails() {
     };
 
     fetchProduct();
-  }, [id]);
+  }, [id, API_URL]);
 
   if (loading) {
     return <p>Loading product details...</p>;

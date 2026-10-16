@@ -13,6 +13,8 @@ function Register() {
   const [isError, setIsError] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const handleRegister = async (event) => {
     event.preventDefault();
 
@@ -34,8 +36,14 @@ function Register() {
     setLoading(true);
 
     try {
+      if (!API_URL) {
+        throw new Error(
+          "Server configuration is missing. Please try again later."
+        );
+      }
+
       const response = await fetch(
-        "http://localhost:5000/api/auth/register",
+        `${API_URL.replace(/\/+$/, "")}/api/auth/register`,
         {
           method: "POST",
           headers: {

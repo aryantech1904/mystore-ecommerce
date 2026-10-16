@@ -12,11 +12,17 @@ function Products() {
   const [category, setCategory] = useState("All");
   const [maxPrice, setMaxPrice] = useState(100000);
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+        if (!API_URL) {
+          throw new Error("Backend URL is not configured.");
+        }
+
         const response = await fetch(
-          "http://localhost:5000/api/products"
+          `${API_URL.replace(/\/+$/, "")}/api/products`
         );
 
         if (!response.ok) {
@@ -26,14 +32,16 @@ function Products() {
         const data = await response.json();
         setProducts(data);
       } catch (err) {
-        setError(err.message || "Backend se connection nahi ho paaya.");
+        setError(
+          err.message || "Backend se connection nahi ho paaya."
+        );
       } finally {
         setLoading(false);
       }
     };
 
     fetchProducts();
-  }, []);
+  }, [API_URL]);
 
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.name

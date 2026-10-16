@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -13,6 +12,8 @@ function Login() {
 
   const navigate = useNavigate();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const handleLogin = async (event) => {
     event.preventDefault();
 
@@ -21,8 +22,14 @@ function Login() {
     setLoading(true);
 
     try {
+      if (!API_URL) {
+        throw new Error(
+          "Server configuration is missing. Please try again later."
+        );
+      }
+
       const response = await fetch(
-        "http://localhost:5000/api/auth/login",
+        `${API_URL.replace(/\/+$/, "")}/api/auth/login`,
         {
           method: "POST",
           headers: {
@@ -41,16 +48,15 @@ function Login() {
         throw new Error(data.message || "Login failed.");
       }
 
-      // Save the token and basic user details
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
 
-     setMessage("Login successful!");
-setIsError(false);
+      setMessage("Login successful!");
+      setIsError(false);
 
-setTimeout(() => {
-  navigate("/");
-}, 1500);
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
     } catch (error) {
       setIsError(true);
       setMessage(
